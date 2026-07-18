@@ -4,6 +4,11 @@ description: 'The unfair race of life'
 pubDate: 2026-07-18
 ---
 
+*A note before you begin: the thoughts, observations, and research points in this
+piece are entirely my own. I gathered a lot of raw notes, scattered writing, and
+data along the way, and used AI to help consolidate and polish it all into a
+readable draft.*
+
 For about a month now, my mother has been teaching two children. They are the
 kids of the woman who helps clean our house. She isn't charging anything. She
 offers it freely, out of the simple conviction that she can help, and so she

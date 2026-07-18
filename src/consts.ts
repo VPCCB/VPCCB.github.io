@@ -9,14 +9,9 @@ export const SITE_TAGLINE = 'I occasionally think out loud.';
 export const NAV_LINKS = [
   { href: '/', label: 'Home' },
   { href: '/blog', label: 'Writing' },
-  { href: '/work', label: 'Work' },
-  { href: '/about', label: 'About' },
 ];
 
 // Social / contact links shown in the footer. Delete any you don't want.
 export const SOCIAL_LINKS = [
-  { href: 'https://github.com/your-username', label: 'GitHub' },
-  { href: 'mailto:you@example.com', label: 'Email' },
-  // { href: 'https://twitter.com/your-handle', label: 'Twitter' },
-  // { href: 'https://www.linkedin.com/in/your-handle', label: 'LinkedIn' },
+  { href: 'https://github.com/VPCCB', label: 'GitHub' },
 ];
