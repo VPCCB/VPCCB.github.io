@@ -1,0 +1,29 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const posts = (await getCollection('blog'))
+  .filter((p) => !p.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+---
+
+<Base title="Writing" description="Essays, notes, and thoughts.">
+  <h1>Writing</h1>
+  <ul class="post-list">
+    {
+      posts.map((post) => (
+        <li>
+          <a href={`${base}/blog/${post.id}/`}>
+            <span class="post-title">{post.data.title}</span>
+            <span class="post-date">{fmt(post.data.pubDate)}</span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</Base>

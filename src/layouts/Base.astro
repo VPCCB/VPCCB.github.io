@@ -1,0 +1,33 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  wide?: boolean;
+}
+
+const { title, description, wide = false } = Astro.props;
+
+// Base-aware URL for the Gond-art background, applied as a CSS variable.
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const gondBg = `url('${base}/gond-bg.svg')`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+  <body style={`--gond-bg: ${gondBg}`}>
+    <Header />
+    <main>
+      <div class={`container${wide ? ' container-wide' : ''}`}>
+        <slot />
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>

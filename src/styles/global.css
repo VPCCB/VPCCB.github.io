@@ -1,0 +1,443 @@
+/* ============================================================
+   Terracotta — a warm, minimalist theme
+   Edit the variables below to tweak the whole site at once.
+   ============================================================ */
+
+:root {
+  /* Terracotta palette */
+  --clay: #c1603d;          /* primary terracotta */
+  --clay-deep: #a24c2e;     /* darker terracotta (hover) */
+  --clay-soft: #e0a184;     /* soft terracotta accent */
+  --sand: #f7f0e9;          /* page background (warm cream) */
+  --sand-2: #efe4d8;        /* subtle raised surfaces */
+  --ink: #2c2622;           /* main text (warm near-black) */
+  --ink-soft: #6f635a;      /* muted text */
+  --line: #e6d8ca;          /* hairline borders */
+
+  /* Typography */
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+  /* Layout */
+  --measure: 42rem;         /* comfortable reading width */
+  --radius: 10px;
+  --pad: clamp(1.25rem, 4vw, 2rem);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --clay: #e08a63;
+    --clay-deep: #eea884;
+    --clay-soft: #b96a49;
+    --sand: #1c1815;
+    --sand-2: #262019;
+    --ink: #f0e7de;
+    --ink-soft: #b3a396;
+    --line: #362d25;
+  }
+}
+
+/* ---------- Reset-ish ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--ink);
+  background: var(--sand);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  position: relative;
+}
+
+/* ---------- Gond-art background ----------
+   A fixed, tiled folk-art pattern sitting behind the content.
+   --gond-bg is set in the layout so it resolves correctly on GitHub Pages.
+   A soft panel behind the reading column (below) keeps text crisp. */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-color: var(--sand);
+  background-image: var(--gond-bg);
+  background-repeat: repeat;
+  background-size: 460px auto;
+  opacity: 0.55;
+}
+
+@media (prefers-color-scheme: dark) {
+  body::before {
+    opacity: 0.4;
+  }
+}
+
+/* Respect print */
+@media print {
+  body::before {
+    display: none;
+  }
+}
+
+/* ---------- Layout container ---------- */
+.container {
+  width: 100%;
+  max-width: var(--measure);
+  margin-inline: auto;
+  padding-inline: var(--pad);
+}
+
+.container-wide {
+  max-width: 60rem;
+}
+
+/* ---------- Typography ---------- */
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin: 2.4rem 0 1rem;
+}
+
+h1 {
+  font-size: clamp(2.1rem, 6vw, 3rem);
+  margin-top: 0;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 4vw, 1.9rem);
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+p {
+  margin: 0 0 1.15rem;
+}
+
+a {
+  color: var(--clay);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: var(--clay-deep);
+}
+
+strong {
+  font-weight: 600;
+}
+
+blockquote {
+  margin: 1.6rem 0;
+  padding: 0.2rem 0 0.2rem 1.25rem;
+  border-left: 3px solid var(--clay-soft);
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+code {
+  font-family: 'SFMono-Regular', ui-monospace, Menlo, Consolas, monospace;
+  font-size: 0.9em;
+  background: var(--sand-2);
+  padding: 0.15em 0.4em;
+  border-radius: 5px;
+}
+
+pre {
+  background: var(--sand-2);
+  padding: 1.1rem 1.25rem;
+  border-radius: var(--radius);
+  overflow-x: auto;
+  border: 1px solid var(--line);
+}
+
+pre code {
+  background: none;
+  padding: 0;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 2.5rem 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+}
+
+ul,
+ol {
+  padding-left: 1.3rem;
+}
+
+li {
+  margin-bottom: 0.4rem;
+}
+
+/* ---------- Header / nav ---------- */
+.site-header {
+  border-bottom: 1px solid var(--line);
+  background: color-mix(in srgb, var(--sand) 88%, transparent);
+  backdrop-filter: blur(2px);
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1.4rem;
+  padding-bottom: 1.4rem;
+  flex-wrap: wrap;
+}
+
+.brand {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+
+.brand:hover {
+  color: var(--clay);
+}
+
+.nav {
+  display: flex;
+  gap: 1.4rem;
+  font-size: 0.98rem;
+}
+
+.nav a {
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+
+.nav a:hover,
+.nav a[aria-current='page'] {
+  color: var(--clay);
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  border-top: 1px solid var(--line);
+  margin-top: 4rem;
+  padding-block: 2rem;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  background: color-mix(in srgb, var(--sand) 88%, transparent);
+  backdrop-filter: blur(2px);
+}
+
+.site-footer .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.social {
+  display: flex;
+  gap: 1.1rem;
+}
+
+.social a {
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+
+.social a:hover {
+  color: var(--clay);
+}
+
+/* ---------- Home ---------- */
+main {
+  padding-block: 3rem;
+}
+
+/* Soft panel behind the reading column so text stays crisp over the art. */
+main > .container {
+  background: color-mix(in srgb, var(--sand) 82%, transparent);
+  backdrop-filter: blur(3px);
+  border-radius: var(--radius);
+  padding-block: 2.25rem;
+  box-shadow: 0 1px 30px color-mix(in srgb, var(--ink) 6%, transparent);
+}
+
+.intro {
+  margin-bottom: 3rem;
+}
+
+.intro .eyebrow {
+  color: var(--clay);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.intro .tagline {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 4vw, 1.7rem);
+  color: var(--ink-soft);
+  line-height: 1.4;
+  max-width: 34ch;
+}
+
+/* ---------- Post list ---------- */
+.post-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.post-list li {
+  margin: 0;
+}
+
+.post-list a {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--line);
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.post-list a:hover .post-title {
+  color: var(--clay);
+}
+
+.post-title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: color 0.15s ease;
+}
+
+.post-date {
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.section-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- Blog post ---------- */
+.post-header {
+  margin-bottom: 2.5rem;
+}
+
+.post-header .post-meta {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.prose > :first-child {
+  margin-top: 0;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 2rem;
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-size: 0.92rem;
+}
+
+.back-link:hover {
+  color: var(--clay);
+}
+
+/* ---------- Work / project cards ---------- */
+.work-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  margin-top: 1.5rem;
+}
+
+.work-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.3rem;
+  background: var(--sand-2);
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.work-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--clay-soft);
+}
+
+.work-card h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.15rem;
+}
+
+.work-card p {
+  margin: 0 0 0.8rem;
+  color: var(--ink-soft);
+  font-size: 0.96rem;
+}
+
+.work-card .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tag {
+  font-size: 0.75rem;
+  color: var(--clay-deep);
+  background: color-mix(in srgb, var(--clay-soft) 30%, transparent);
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+}
+
+/* ---------- Utilities ---------- */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
