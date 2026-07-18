@@ -22,19 +22,10 @@
   --measure: 42rem;         /* comfortable reading width */
   --radius: 10px;
   --pad: clamp(1.25rem, 4vw, 2rem);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --clay: #e08a63;
-    --clay-deep: #eea884;
-    --clay-soft: #b96a49;
-    --sand: #1c1815;
-    --sand-2: #262019;
-    --ink: #f0e7de;
-    --ink-soft: #b3a396;
-    --line: #362d25;
-  }
+  /* Always render the warm terracotta light theme, even when the
+     operating system is set to dark mode. */
+  color-scheme: light;
 }
 
 /* ---------- Reset-ish ---------- */
