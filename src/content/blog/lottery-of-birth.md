@@ -15,7 +15,7 @@ that she can help, and so she should. She was a teacher for her entire working
 life, formally trained, with all the relevant coursework behind her. Teaching is
 not a favour she is doing; it is who she is.
 
-For some context. the children don't go to an expensive private school. They go
+For some context, the children don't go to an expensive private school. They go
 to a govt. elementary school their family can afford. For a while the kids went to
 a tuition centre, but their mother pulled them out because it wasn't helping. The
 school itself, she felt, wasn't helping much either. I want to pause on that: here
