@@ -10,16 +10,14 @@ data along the way, and used AI to help consolidate and polish it all into a
 readable draft.*
 
 For about a month now, my mother has been teaching two children. They are the
-kids of the woman who helps clean our house. She isn't charging anything. She
-offers it freely, out of the simple conviction that she can help, and so she
-should. She was a teacher for her entire working life, formally trained, with all
-the relevant coursework behind her. Teaching is not a favour she is doing; it is
-who she is.
+kids of our house help. My mom has been teaching them with the simple conviction
+that she can help, and so she should. She was a teacher for her entire working
+life, formally trained, with all the relevant coursework behind her. Teaching is
+not a favour she is doing; it is who she is.
 
-The children don't go to an expensive private school. They go to the school their
-family can afford. Their father drives for a household; their mother works as
-domestic help across several homes through the day. For a while the kids went to a
-tuition centre, but their mother pulled them out because it wasn't helping. The
+For some context. the children don't go to an expensive private school. They go
+to a govt. elementary school their family can afford. For a while the kids went to
+a tuition centre, but their mother pulled them out because it wasn't helping. The
 school itself, she felt, wasn't helping much either. I want to pause on that: here
 is a woman who, along with her husband, could not study past the 8th grade because
 of their circumstances, and yet she is fiercely, unmistakably invested in her
