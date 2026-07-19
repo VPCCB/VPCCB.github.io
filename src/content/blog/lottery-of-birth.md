@@ -35,7 +35,8 @@ school in India. It genuinely pains me.
 
 ## What prompted me to write?
 
-None of this is *news* to me. Perhaps seeing it up close, through my mother's daily
+The sorry state of primary education in majority of government schools isn't news
+to me. Perhaps seeing it up close, through my mother's daily
 reports, simply made it harder to look away.
 
 But the thing that finally made me write was something else entirely.
